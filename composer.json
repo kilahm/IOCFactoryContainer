@@ -1,0 +1,19 @@
+{
+    "name": "kilahm/ioc-factory-container",
+    "description": "An abstract class to help build a collection methods which can be used as an IOC Container",
+    "type" : "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Isaac Leinweber",
+            "email": "brotchen@gmail.com"
+        }
+    ],
+    "require-dev": {
+        "hackpack/hackunit": "dev-master"
+    },
+    "require": {},
+    "autoload": {
+        "psr-4": {"kilahm\\IOC\\": "src/"}
+    }
+}
