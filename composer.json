@@ -10,7 +10,7 @@
         }
     ],
     "require-dev": {
-        "hackpack/hackunit": "dev-master",
+        "hackpack/hackunit": "dev-master"
     },
     "require": {
         "kilahm/hack-class-scanner": "dev-master"
@@ -20,5 +20,6 @@
             "kilahm\\IOC\\": "src/",
             "kilahm\\IOC\\Test\\": "Test"
         }
-    }
+    },
+    "bin" : ["bin/findfactories"]
 }
