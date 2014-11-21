@@ -1,6 +1,6 @@
 <?hh // strict
 
-namespace kilahm\IOC;;
+namespace kilahm\IOC;
 
 
 final class FactoryRunner<Tcontainer>

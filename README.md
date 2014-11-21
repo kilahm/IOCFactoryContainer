@@ -1,4 +1,9 @@
-IOCFactoryContainer
+IOC Factory Container
 ===================
 
-An abstract class to help build a collection methods which can be used as an IOC Container
+Compile a type safe IOC Container from user defined attributes.
+
+TO DO
+=====
+
+Documentation will follow

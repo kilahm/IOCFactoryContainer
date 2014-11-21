@@ -10,10 +10,15 @@
         }
     ],
     "require-dev": {
-        "hackpack/hackunit": "dev-master"
+        "hackpack/hackunit": "dev-master",
     },
-    "require": {},
+    "require": {
+        "kilahm/hack-class-scanner": "dev-master"
+    },
     "autoload": {
-        "psr-4": {"kilahm\\IOC\\": "src/"}
+        "psr-4": {
+            "kilahm\\IOC\\": "src/",
+            "kilahm\\IOC\\Test\\": "Test"
+        }
     }
 }
