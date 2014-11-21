@@ -21,4 +21,5 @@
             "kilahm\\IOC\\Test\\": "Test"
         }
     }
+    "bin" : ["bin/findfactories"]
 }
