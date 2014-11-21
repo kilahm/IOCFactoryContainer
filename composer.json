@@ -1,6 +1,6 @@
 {
     "name": "kilahm/ioc-factory-container",
-    "description": "An abstract class to help build a collection methods which can be used as an IOC Container",
+    "description": "Using attributes, compile your factories into a single class",
     "type" : "library",
     "license": "MIT",
     "authors": [
