@@ -13,6 +13,7 @@
         "hackpack/hackunit": "dev-master"
     },
     "require": {
+        "hhvm": "~3.4",
         "kilahm/hack-class-scanner": "dev-master"
     },
     "autoload": {
