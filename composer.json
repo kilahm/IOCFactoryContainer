@@ -15,7 +15,7 @@
     },
     "require": {
         "hhvm": "~3.3",
-        "kilahm/hack-class-scanner": "dev-master"
+        "kilahm/hack-class-scanner": "~1.2"
     },
     "autoload": {
         "psr-4": {

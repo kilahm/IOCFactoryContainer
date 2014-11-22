@@ -42,6 +42,6 @@ use kilahm\IOC\ContainerCompiler;
 
 echo PHP_EOL . 'Generating factory contianer.' . PHP_EOL;
 
-kilahm\IOC\ContainerCompiler::fromCli($argv)->compile($basedir . '/FactoryContainer.php');
+kilahm\IOC\ContainerCompiler::fromCli(Vector::fromItems($argv))->compile($basedir . '/FactoryContainer.php');
 
 echo 'Done generating factory container.' . PHP_EOL . PHP_EOL;
