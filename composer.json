@@ -3,6 +3,7 @@
     "description": "Using attributes, compile your factories into a single class",
     "type" : "library",
     "license": "MIT",
+    "keywords": ["hack", "hhvm", "ioc", "container", "factory", "di", "dependency injection", "inversion of control"],
     "authors": [
         {
             "name": "Isaac Leinweber",
@@ -13,6 +14,7 @@
         "hackpack/hackunit": "dev-master"
     },
     "require": {
+        "hhvm": "~3.4",
         "kilahm/hack-class-scanner": "dev-master"
     },
     "autoload": {
