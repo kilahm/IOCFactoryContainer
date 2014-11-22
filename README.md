@@ -3,6 +3,8 @@ IOC Factory Container
 
 Compile a type safe IOC Container from user defined attributes.
 
+[![Build Status](https://travis-ci.org/kilahm/IOCFactoryContainer.svg?branch=master)](https://travis-ci.org/kilahm/IOCFactoryContainer)
+
 ## Use
 
 This library includes an executable that will scan your project directory for factories then construct a valid hack file that aliases all your factories as public instance methods of a single class.  Your factory methods must accept only a single parameter which is the factory container.
