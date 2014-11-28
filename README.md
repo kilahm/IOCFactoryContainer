@@ -1,9 +1,8 @@
 IOC Factory Container
 ===================
+[![Build Status](https://travis-ci.org/kilahm/IOCFactoryContainer.svg?branch=master)](https://travis-ci.org/kilahm/IOCFactoryContainer) [![HHVM Status](http://hhvm.h4cc.de/badge/kilahm/ioc-factory-container.svg)](http://hhvm.h4cc.de/package/kilahm/ioc-factory-container)
 
 Compile a type safe IOC Container from user defined attributes.
-
-[![Build Status](https://travis-ci.org/kilahm/IOCFactoryContainer.svg?branch=master)](https://travis-ci.org/kilahm/IOCFactoryContainer)
 
 ## Use
 
