@@ -38,10 +38,30 @@ if(
     die('Unable to create the install path ' . $installPath);
 }
 
+use kilahm\Clio\Clio;
 use kilahm\IOC\ContainerCompiler;
+use kilahm\Scanner\ClassScanner;
+
+$clio = Clio::fromCli();
+
+$excludeOpt = $clio->opt('exclude')->aka('e')->aka('excludes')->aka('skip')
+    ->describedAs('Space delimited list of directories to skip');
+$installDirOpt = $clio->opt('install-to')->aka('i')
+    ->isPath()
+    ->describedAs('Path to install FactoryContainer.php');
+$arg = $clio->arg('ScanPath')->describedAs('Base path to scan.  There may be any number of these.');
+
+if($arg->getVal() === ''){
+    $clio->help();
+    exit(1);
+}
+
+$scanner = new ClassScanner($clio->getArgVals()->toSet(), Set::fromItems(explode(' ', $excludeOpt->getVal())));
+
+$compiler = new ContainerCompiler($scanner->mapClassToFile());
 
 echo PHP_EOL . 'Generating factory contianer.' . PHP_EOL;
 
-kilahm\IOC\ContainerCompiler::fromCli(Vector::fromItems($argv))->compile($basedir . '/FactoryContainer.php');
+$compiler->compile($basedir . '/FactoryContainer.php');
 
 echo 'Done generating factory container.' . PHP_EOL . PHP_EOL;

@@ -19,11 +19,6 @@ final class ContainerCompiler
 
     const string CONTAINER_FILENAME = 'FactoryContainer.php';
 
-    public static function fromCli(Vector<string> $argv) : this
-    {
-        return new static(ClassScanner::fromCli($argv)->mapClassOrInterfaceToFile());
-    }
-
     public function __construct(private Map<string,string> $classMap)
     {
     }
