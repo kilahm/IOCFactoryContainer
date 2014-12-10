@@ -9,4 +9,5 @@ before_script:
     - bin/findfactories Test/Fixtures/
 
 script:
+    - hh_client
     - vendor/bin/hackunit Test

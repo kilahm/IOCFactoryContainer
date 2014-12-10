@@ -55,30 +55,30 @@ final class ContainerCompiler
     {
         foreach($reflector->getMethods(ReflectionMethod::IS_STATIC) as $staticMethod) {
             // The factory must only accept the IOC Container class as a parameter
-            if($staticMethod->getNumberOfParameters() > 1) {
+            if($staticMethod->getNumberOfParameters() !== 1) {
+                continue;
+            }
+            $parameterClass = $staticMethod->getParameters()[0]->getClass();
+            if($parameterClass->getName() != 'kilahm\IOC\FactoryContainer') {
                 continue;
             }
 
             $providesArgs = Vector::fromItems($staticMethod->getAttribute('provides'));
-            if($providesArgs->count() < 2) {
+            if($providesArgs->count() < 1) {
                 continue;
             }
+            $alias = (string)$providesArgs[0];
 
-            $provides = '\\' . (string)$providesArgs[0];
-            $alias = (string)$providesArgs[1];
-
-            $parameterClass = $staticMethod->getParameters()[0]->getClass();
-
-            if( ! class_exists($provides) && ! interface_exists($provides)) {
-                echo "$provides is not defined.";
-                continue;
+            $returnType = $staticMethod->getReturnTypeText();
+            if($returnType === 'HH\this') {
+                $returnType = '\\' . $reflector->getName();
+            } else {
+                $returnType = '\\' . $returnType;
             }
-            if($parameterClass->getName() != 'kilahm\IOC\FactoryContainer') {
-                continue;
-            }
+
             $this->factoryList[] = shape(
                 'alias' => $alias,
-                'provides' => $provides,
+                'provides' => $returnType,
                 'className' => '\\' . $reflector->getName(),
                 'methodName' => $staticMethod->getName(),
             );

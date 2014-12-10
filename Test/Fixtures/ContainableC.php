@@ -6,7 +6,7 @@ use kilahm\IOC\FactoryContainer;
 
 <<__ConsistentConstruct>> class ContainableC
 {
-    <<provides('kilahm\IOC\Test\Fixtures\ContainableC', 'c')>>
+    <<provides('c')>>
     public static function factory(FactoryContainer $c) : this
     {
         return new static($c->newA());
