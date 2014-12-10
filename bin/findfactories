@@ -45,8 +45,10 @@ use kilahm\Scanner\ClassScanner;
 $clio = Clio::fromCli();
 
 $excludeOpt = $clio->opt('exclude')->aka('e')->aka('excludes')->aka('skip')
+    ->withValue()
     ->describedAs('Space delimited list of directories to skip');
 $installDirOpt = $clio->opt('install-to')->aka('i')
+    ->withValue()
     ->isPath()
     ->describedAs('Path to install FactoryContainer.php');
 $arg = $clio->arg('ScanPath')->describedAs('Base path to scan.  There may be any number of these.');
