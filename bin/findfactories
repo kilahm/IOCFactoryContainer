@@ -51,6 +51,9 @@ $installDirOpt = $clio->opt('install-to')->aka('i')
     ->withValue()
     ->isPath()
     ->describedAs('Path to install FactoryContainer.php');
+$extensionsOpt = $clio->opt('extension')
+    ->withManyValues(Vector{'.php', '.hh', '.hh.php'})
+    ->describedAs('File extensions to search.  Defaults to [ .php | .hh | .hh.php ]');
 $arg = $clio->arg('ScanPath')->describedAs('Base path to scan.  There may be any number of these.');
 
 if($arg->getVal() === ''){
@@ -58,9 +61,17 @@ if($arg->getVal() === ''){
     exit(1);
 }
 
+$fileFilter = $fName ==> {
+    foreach($extensionsOpt->getValueList() as $ext) {
+        if(strpos($fName, $ext) !== false) {
+            return true;
+        }
+    }
+};
+
 $scanner = new ClassScanner($clio->getArgVals()->toSet(), Set::fromItems(explode(' ', $excludeOpt->getVal())));
 
-$compiler = new ContainerCompiler($scanner->mapClassToFile());
+$compiler = new ContainerCompiler($scanner->addFileNameFilter($fileFilter)->mapClassToFile());
 
 echo PHP_EOL . 'Generating factory contianer.' . PHP_EOL;
 

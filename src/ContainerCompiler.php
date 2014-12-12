@@ -16,17 +16,11 @@ type FactoryInfo = shape(
 final class ContainerCompiler
 {
     private Vector<FactoryInfo> $factoryList = Vector{};
-    private Map<string,string> $classMap;
 
     const string CONTAINER_FILENAME = 'FactoryContainer.php';
 
-    public function __construct(Map<string,string> $classMap)
+    public function __construct(private Map<string,string> $classMap)
     {
-        // Only scan .php and .hh files
-        $this->classMap = $classMap->filter( $name ==>
-            stripos($name, '.php') !== false ||
-            stripos($name, '.hh') !== false
-        );
     }
 
     public function compile(string $outFileName) : void
