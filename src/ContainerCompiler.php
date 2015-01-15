@@ -55,14 +55,13 @@ final class ContainerCompiler
     {
         foreach($reflector->getMethods(ReflectionMethod::IS_STATIC) as $staticMethod) {
             // The factory must only accept the IOC Container class as a parameter
-            if($staticMethod->getNumberOfParameters() !== 1) {
+            if(
+                $staticMethod->getNumberOfParameters() !== 1 ||
+                $staticMethod->getParameters()[0]->getTypeText() != 'kilahm\IOC\FactoryContainer'
+            ) {
                 continue;
             }
-            $parameterClass = $staticMethod->getParameters()[0]->getClass();
-            if($parameterClass->getName() != 'kilahm\IOC\FactoryContainer') {
-                continue;
-            }
-
+            
             $providesArgs = Vector::fromItems($staticMethod->getAttribute('provides'));
             if($providesArgs->count() < 1) {
                 continue;
