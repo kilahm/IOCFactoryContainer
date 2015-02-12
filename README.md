@@ -1,5 +1,7 @@
 IOC Factory Container
 ===================
+
+[![Join the chat at https://gitter.im/kilahm/IOCFactoryContainer](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/kilahm/IOCFactoryContainer?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 [![Build Status](https://travis-ci.org/kilahm/IOCFactoryContainer.svg?branch=master)](https://travis-ci.org/kilahm/IOCFactoryContainer) [![HHVM Status](http://hhvm.h4cc.de/badge/kilahm/ioc-factory-container.svg)](http://hhvm.h4cc.de/package/kilahm/ioc-factory-container)
 
 Compile a type safe IOC Container from user defined attributes.
