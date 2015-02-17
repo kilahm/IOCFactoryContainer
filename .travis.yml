@@ -7,8 +7,8 @@ php:
 
 before_script:
     - composer install --prefer-source
-    - bin/findfactories Test/Fixtures/
+    - bin/findfactories vendor/kilahm/ioc-factory-container-tests/Test/Fixtures/
 
 script:
     - hh_server --check .
-    - vendor/bin/hackunit Test
+    - vendor/bin/hackunit vendor/kilahm/ioc-factory-container-tests/Test

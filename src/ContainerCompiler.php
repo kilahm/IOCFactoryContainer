@@ -61,7 +61,7 @@ final class ContainerCompiler
             ) {
                 continue;
             }
-            
+
             $providesArgs = Vector::fromItems($staticMethod->getAttribute('provides'));
             if($providesArgs->count() < 1) {
                 continue;
@@ -101,7 +101,7 @@ namespace kilahm\IOC;
 
 class FactoryContainer
 {
-    private FactoryRunner<FactoryContainer> $runner;
+    protected FactoryRunner<FactoryContainer> $runner;
 
     public function __construct()
     {

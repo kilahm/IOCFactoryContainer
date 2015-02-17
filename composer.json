@@ -10,8 +10,9 @@
             "email": "brotchen@gmail.com"
         }
     ],
+    "minimum-stability" : "dev",
     "require-dev": {
-        "hackpack/hackunit": "dev-master"
+        "kilahm/ioc-factory-container-tests": "@dev"
     },
     "require": {
         "hhvm": "~3.3",
@@ -20,8 +21,7 @@
     },
     "autoload": {
         "psr-4": {
-            "kilahm\\IOC\\": "src/",
-            "kilahm\\IOC\\Test\\": "Test"
+            "kilahm\\IOC\\": "src/"
         }
     },
     "bin" : ["bin/findfactories"]
