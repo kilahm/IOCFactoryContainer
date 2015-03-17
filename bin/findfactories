@@ -40,7 +40,7 @@ if(
 
 use kilahm\Clio\Clio;
 use kilahm\IOC\ContainerCompiler;
-use kilahm\Scanner\ClassScanner;
+use HackPack\Scanner\ClassScanner;
 
 $clio = Clio::fromCli();
 

@@ -15,8 +15,8 @@
         "kilahm/ioc-factory-container-tests": "@dev"
     },
     "require": {
-        "hhvm": "~3.3",
-        "kilahm/hack-class-scanner": "~1.3.0",
+        "hhvm": ">=3.5",
+        "hackpack/hack-class-scanner": "1.*",
         "kilahm/hack-clio": "~1.1.0"
     },
     "autoload": {
